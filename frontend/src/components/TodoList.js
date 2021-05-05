@@ -1,11 +1,12 @@
 import React from "react";
-import { Col, Container } from "react-bootstrap";
-
-function TodoList({ todos }) {
+import Todo from "./Todo";
+function TodoList({ todos, setTodos }) {
   return (
-    <div>
+    <div className="tasks">
       {todos.map((todo) => {
-        return <Col key={todo.id}>{todo.task}</Col>;
+        return (
+          <Todo key={todo.id} todo={todo} todos={todos} setTodos={setTodos} />
+        );
       })}
     </div>
   );

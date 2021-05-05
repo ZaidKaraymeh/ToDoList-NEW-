@@ -2,9 +2,6 @@ import React, { useState } from "react";
 import { Form, Button } from "react-bootstrap";
 
 function TodoForm({ addtoTodos }) {
-  let ID = () => {
-    return "_" + Math.random().toString(36).substr(2, 9);
-  };
   const [todo, setTodo] = useState({
     id: "",
     task: "",
@@ -12,19 +9,21 @@ function TodoForm({ addtoTodos }) {
   });
 
   const handleChange = (e) => {
-    console.log(todo.task);
     setTodo({ ...todo, task: e.target.value });
   };
   const handleSubmit = (e) => {
     e.preventDefault();
     if (todo.task.trim()) {
-      addtoTodos({ ...todo, id: ID });
+      addtoTodos({
+        ...todo,
+        id: "_" + Math.random().toString(36).substr(2, 9),
+      });
       setTodo({ ...todo, task: "" });
     }
   };
 
   return (
-    <Form onSubmit={handleSubmit}>
+    <Form onSubmit={handleSubmit} style={{ display: "flex", padding: "1rem" }}>
       <Form.Group controlId="todoForm">
         <Form.Control
           value={todo.task}
@@ -34,9 +33,13 @@ function TodoForm({ addtoTodos }) {
         />
       </Form.Group>
 
-      <Button variant="success" type="submit">
+      <button
+        className="form-submit-btn"
+        style={{ marginLeft: "1rem" }}
+        type="submit"
+      >
         Submit
-      </Button>
+      </button>
     </Form>
   );
 }

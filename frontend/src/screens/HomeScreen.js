@@ -1,5 +1,5 @@
-import React, { useEffect, useState } from "react";
-import { Container, Row, Col, Card, Button } from "react-bootstrap";
+import React, { useState } from "react";
+import { Container } from "react-bootstrap";
 import TodoList from "../components/TodoList";
 import TodoForm from "../components/TodoForm";
 
@@ -9,10 +9,11 @@ function HomeScreen() {
   const addtoTodos = (todo) => {
     setTodos([...todos, todo]);
   };
+
   return (
-    <Container>
-      <TodoForm addtoTodos={addtoTodos} />
-      <TodoList todos={todos} />
+    <Container className="main">
+      <TodoForm addtoTodos={addtoTodos} setTodos={setTodos} />
+      <TodoList todos={todos} setTodos={setTodos} />
     </Container>
   );
 }
