@@ -15,7 +15,7 @@ function Todo({ todo, todos, setTodos }) {
       <ul
         className="todo-item"
         style={{
-          color: "black",
+          color: "#fdf5e6",
           textDecoration: isCompleted ? "line-through" : null,
         }}
         key={todo.id}

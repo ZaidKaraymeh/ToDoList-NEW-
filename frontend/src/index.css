@@ -1,19 +1,31 @@
 body {
+  color: #ffffff;
   margin: 0;
+  font-family: "Roboto Mono", cursive !important;
+  font-weight: 200 !important;
+}
+
+.font-link {
+  font-family: "Roboto Mono", cursive !important;
 }
 
 .home-container {
   display: flex;
   flex-direction: row;
-  background-color: #ce9c70;
+  background-color: #0d0c0a;
   border: 1px solid black;
   min-height: 100vh;
 }
 
 .sidebar {
   border: 1px solid black;
+
   width: 200px;
-  background-color: #e7c096;
+  background-color: #0f0f0f;
+  color: white;
+}
+h3 {
+  text-align: center;
   color: white;
 }
 
@@ -28,9 +40,48 @@ main {
   min-height: 80vh;
 }
 
+/* Sidebar */
+
+.sidebar-pages {
+  min-height: 85vh;
+  word-break: break-all;
+  text-align: center;
+  color: #ffffff;
+}
+
+.sidebar-page-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  width: 150px;
+  margin: 0;
+  margin-right: 50px;
+  padding-right: 50px;
+}
+
+.create-page-btn {
+  font-family: "Roboto Mono", cursive !important;
+
+  color: white !important;
+  border: 2px solid black !important;
+  width: max-content !important;
+  border-radius: 0.45rem;
+  background-color: #1a2228 !important ;
+}
+.create-page-btn-container {
+  display: flex;
+  justify-content: center;
+}
+
+/* Tasks */
 .tasks div {
   display: flex;
   margin-left: 1rem;
+}
+.todo-item {
+  color: black !important;
 }
 
 .tasks {
@@ -72,4 +123,18 @@ main {
   background-color: #56cc9d;
   height: 2.5rem;
   width: 4rem;
+}
+
+/* Modal */
+
+.modal-90w {
+  font-family: "Roboto Mono", cursive !important;
+}
+
+.modal-style {
+  background-color: #0d0c0a !important;
+}
+
+.font-weight-thick {
+  font-weight: 300 !important;
 }
